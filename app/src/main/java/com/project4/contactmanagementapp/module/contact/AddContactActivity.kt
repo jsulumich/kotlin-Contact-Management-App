@@ -113,7 +113,7 @@ class AddContactActivity : AppCompatActivity(),View.OnClickListener{
         val phone  = phoneEt.text.toString()
         val id = databaseHelper.insertData(name,email,phone)
         if(id>0){
-            Message.message(this,"successfully inserted a row")
+            Message.message(this,"Contact added")
             finish()
         }else{
             Message.message(this,"Unsuccessfull")
