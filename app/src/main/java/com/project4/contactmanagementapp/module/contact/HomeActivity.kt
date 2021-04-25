@@ -3,6 +3,8 @@ package com.project4.contactmanagementapp.module.contact
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.project4.contactmanagementapp.Constants
@@ -11,6 +13,7 @@ import com.project4.contactmanagementapp.R
 import com.project4.contactmanagementapp.database.ContactDatabaseAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class HomeActivity : AppCompatActivity(),View.OnClickListener, OnItemClickListener {
     private lateinit var databaseHelper: ContactDatabaseAdapter
@@ -91,6 +94,34 @@ class HomeActivity : AppCompatActivity(),View.OnClickListener, OnItemClickListen
 
     override fun itemClickListener(view: View, position: Int) {
         goToAddContactActivity(position)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    // handles menu item selection. Changes color of app background depending on user selection
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_green -> {
+                item.isChecked = !item.isChecked
+                layoutView.setBackgroundColor(android.graphics.Color.rgb(153,255,153))
+                return true
+            }
+            R.id.menu_yellow -> {
+                item.isChecked = !item.isChecked
+                layoutView.setBackgroundColor(android.graphics.Color.rgb(255,255,153))
+                return true
+            }
+            R.id.menu_blue -> {
+                item.isChecked = !item.isChecked
+                layoutView.setBackgroundColor(android.graphics.Color.rgb(153,255,255))
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
 }
