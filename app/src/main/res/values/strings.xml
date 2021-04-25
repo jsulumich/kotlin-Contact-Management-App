@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Contacts</string>
+    <string name="splash">My Contacts</string>
+
+    <!--Add Data Activity-->
+    <string name="name">Name :</string>
+    <string name="email">Email :</string>
+    <string name="phone">Phone :</string>
+
+    <string name="add_data">Add Contact</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="contact_title">Contacts</string>
+    <string name="add_data_title">Add Contact</string>
+
+    <!--No data found text-->
+    <string name="no_data_found">No contacts found. Please add a contact</string>
+</resources>
